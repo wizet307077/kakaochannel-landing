@@ -76,7 +76,7 @@ export default function BenefitsSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            채널메이트 <span className="text-kakao">무료 서비스</span> 혜택
+            채널메이트 <span className="text-kakao font-bold">무료 서비스</span> 혜택
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

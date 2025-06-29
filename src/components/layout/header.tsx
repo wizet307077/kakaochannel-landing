@@ -16,7 +16,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <span className="text-kakao">채널</span>메이트
+          <span className="text-kakao font-bold">채널</span>메이트
         </Link>
 
         {/* 데스크탑 메뉴 */}
@@ -33,8 +33,10 @@ export default function Header() {
           <Link href="#contact" className="text-foreground/70 hover:text-foreground transition-colors">
             문의하기
           </Link>
-          <Button className="bg-kakao hover:bg-kakao/90 text-kakao-foreground">
-            카톡 상담 시작
+          <Button className="bg-kakao hover:bg-kakao/90 text-kakao-foreground" asChild>
+            <a href="http://pf.kakao.com/_xnSYrn/chat" target="_blank" rel="noopener noreferrer">
+              카톡 상담 시작
+            </a>
           </Button>
         </nav>
 
@@ -82,9 +84,12 @@ export default function Header() {
             </Link>
             <Button 
               className="bg-kakao hover:bg-kakao/90 text-kakao-foreground w-full"
+              asChild
               onClick={toggleMenu}
             >
-              카톡 상담 시작
+              <a href="http://pf.kakao.com/_xnSYrn/chat" target="_blank" rel="noopener noreferrer">
+                카톡 상담 시작
+              </a>
             </Button>
           </nav>
         </div>

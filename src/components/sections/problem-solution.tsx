@@ -57,7 +57,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            소상공인 디지털 마케팅의 <span className="text-kakao">문제점</span>
+            소상공인 디지털 마케팅의 <span className="text-kakao font-bold">문제점</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            채널메이트의 <span className="text-kakao">해결책</span>
+            채널메이트의 <span className="text-kakao font-bold">해결책</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

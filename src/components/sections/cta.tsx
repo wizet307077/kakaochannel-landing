@@ -44,9 +44,12 @@ export default function CTASection() {
               <Button 
                 size="lg" 
                 className="bg-kakao hover:bg-kakao/90 text-kakao-foreground text-lg"
+                asChild
               >
-                카톡 상담 시작하기
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <a href="http://pf.kakao.com/_xnSYrn/chat" target="_blank" rel="noopener noreferrer">
+                  카톡 상담 시작하기
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
               
               <p className="mt-4 text-sm text-muted-foreground">

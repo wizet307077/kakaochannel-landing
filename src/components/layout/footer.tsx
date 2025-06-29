@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <h3 className="text-lg font-bold mb-4">
-              <span className="text-kakao">채널</span>메이트
+              <span className="text-kakao font-bold">채널</span>메이트
             </h3>
             <p className="text-muted-foreground max-w-md">
               디지털 마케팅 사각지대 소상공인의 &apos;로컬 밀착형 CRM 파트너&apos;
@@ -44,7 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <span className="text-muted-foreground">
-                  이메일: contact@channelmate.co.kr
+                  이메일: 307077@naver.com
                 </span>
               </li>
             </ul>

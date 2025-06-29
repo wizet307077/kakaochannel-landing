@@ -19,7 +19,7 @@ export default function HeroSection() {
               소상공인 10분 선착순 모집 중!
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-              카카오톡채널 개설 및 운영 <span className="text-kakao">무료 대행!</span>
+              카카오톡채널 개설 및 운영 <span className="text-kakao font-extrabold">무료 대행!</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
               전화번호 없이 &apos;채널 추가&apos; 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
@@ -31,16 +31,12 @@ export default function HeroSection() {
               <Button 
                 size="lg" 
                 className="bg-kakao hover:bg-kakao/90 text-kakao-foreground text-lg"
+                asChild
               >
-                카톡 상담 시작하기
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-kakao text-kakao-foreground hover:bg-kakao/10 text-lg"
-              >
-                서비스 더 알아보기
+                <a href="http://pf.kakao.com/_xnSYrn/chat" target="_blank" rel="noopener noreferrer">
+                  카톡 상담 시작하기
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </motion.div>
@@ -83,8 +79,8 @@ export default function HeroSection() {
         
         {/* 트러스트 배지 */}
         <div className="mt-16 mb-8 border-y border-border py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            <div className="flex items-center justify-center md:justify-start gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            <div className="flex items-center md:justify-start gap-3 pl-4">
               <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
                 <span className="text-lg font-bold text-kakao-foreground">3+</span>
               </div>
@@ -93,7 +89,7 @@ export default function HeroSection() {
                 <p className="font-medium">3년 이상 마케팅 경험</p>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center md:justify-start gap-3 pl-4">
               <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
                 <span className="text-lg font-bold text-kakao-foreground">0</span>
               </div>
@@ -102,9 +98,9 @@ export default function HeroSection() {
                 <p className="font-medium">3개월 무료 이용</p>
               </div>
             </div>
-            <div className="flex items-center justify-center md:justify-end gap-3">
+            <div className="flex items-center md:justify-start gap-3 pl-4">
               <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-kakao-foreground">10K</span>
+                <span className="text-lg font-bold text-kakao-foreground">10,000</span>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">메시지 비용</p>
