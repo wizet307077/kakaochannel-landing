@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Check } from "lucide-react";
+import Image from "next/image";
 
 export default function BenefitsSection() {
   const services = [
@@ -11,6 +12,7 @@ export default function BenefitsSection() {
       id: "setup",
       title: "채널 셋업",
       icon: "🔧",
+      displayImage: "/images/2.png",
       features: [
         "프로필 설정 및 최적화",
         "채널홈 디자인 및 구성",
@@ -23,6 +25,7 @@ export default function BenefitsSection() {
       id: "coupon",
       title: "쿠폰 발행",
       icon: "🎟️",
+      displayImage: "/images/3.png",
       features: [
         "월 2회 맞춤형 쿠폰 제작",
         "시즌별 특별 할인 쿠폰",
@@ -35,6 +38,7 @@ export default function BenefitsSection() {
       id: "marketing",
       title: "소식/메시지",
       icon: "📱",
+      displayImage: "/images/4.png",
       features: [
         "월 2회 매장 소식 발송",
         "신메뉴 소개 컨텐츠 제작",
@@ -47,6 +51,7 @@ export default function BenefitsSection() {
       id: "analytics",
       title: "데이터 분석",
       icon: "📊",
+      displayImage: "/images/5.jpeg",
       features: [
         "쿠폰 사용률 분석",
         "친구수 증가 추이 분석",
@@ -141,8 +146,20 @@ export default function BenefitsSection() {
                   transition={{ duration: 0.5 }}
                   className="order-1 lg:order-2"
                 >
-                  <div className="aspect-[4/3] bg-secondary rounded-xl overflow-hidden border border-border flex items-center justify-center">
-                    <div className="text-8xl">{service.icon}</div>
+                  <div className="flex flex-col">
+                    <div className="aspect-[4/3] bg-secondary rounded-xl overflow-hidden border border-border">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={service.displayImage}
+                          alt={service.title}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(min-width: 1024px) 50vw, 100vw"
+                          priority
+                        />
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-700 mt-2 text-center">이미지출처 : 카카오단골만들기지원센터</p>
                   </div>
                 </motion.div>
               </div>

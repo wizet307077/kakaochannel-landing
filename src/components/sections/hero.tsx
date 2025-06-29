@@ -48,27 +48,21 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="aspect-[4/3] relative rounded-xl overflow-hidden border border-border shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-start justify-center">
                 <div className="max-w-[80%] aspect-[3/5] rounded-xl bg-white shadow-lg border border-gray-200 overflow-hidden flex flex-col">
-                  {/* 카카오톡채널 인터페이스 */}
-                  <div className="bg-kakao p-3 flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-white/20"></div>
-                    <div className="ml-2 text-kakao-foreground font-medium">
-                      채널메이트
-                    </div>
-                  </div>
-                  <div className="flex-1 p-4 flex flex-col gap-3">
-                    <div className="h-10 bg-gray-100 rounded-lg w-full"></div>
-                    <div className="h-28 bg-gray-100 rounded-lg w-full"></div>
-                    <div className="h-20 bg-yellow-100 rounded-lg w-full flex items-center justify-center">
-                      <div className="text-sm font-medium text-yellow-800">
-                        첫 방문 할인쿠폰
-                      </div>
-                    </div>
-                    <div className="h-10 bg-gray-100 rounded-lg w-full"></div>
-                  </div>
+                  {/* 카카오톡채널 인터페이스 이미지로 대체 */}
+                  <img 
+                    src="/images/1.png" 
+                    alt="카카오톡 채널 인터페이스" 
+                    className="w-full object-contain object-top"
+                  />
                 </div>
               </div>
+            </div>
+            
+            {/* 출처 문구 */}
+            <div className="text-center mt-2">
+              <p className="text-sm text-gray-700">- 이미지출처 : 카카오단골만들기지원센터</p>
             </div>
             
             {/* 장식 요소들 */}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, CheckCircle, Settings, BarChart } from "lucide-react";
+import Image from "next/image";
 
 export default function ProcessSection() {
   const steps = [
@@ -110,17 +111,15 @@ export default function ProcessSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="rounded-xl overflow-hidden border border-border bg-background p-1">
-              <div className="aspect-[4/3] bg-gradient-to-tr from-kakao/30 to-white rounded-lg flex items-center justify-center">
-                <div className="bg-white p-6 rounded-lg shadow-lg max-w-[80%] text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="h-24 w-24 bg-kakao rounded-full flex items-center justify-center text-2xl font-bold text-kakao-foreground">
-                      QR
-                    </div>
-                  </div>
-                  <p className="font-medium text-lg mb-2">채널 추가 QR 코드</p>
-                  <p className="text-sm text-muted-foreground">매장에 비치하여 고객 유치</p>
-                </div>
+            <div className="rounded-xl overflow-hidden border border-border bg-white shadow-lg">
+              <div className="p-4 text-center">
+                <img 
+                  src="/images/qr.png" 
+                  alt="채널 추가 QR 코드" 
+                  className="mx-auto w-[300px] h-auto"
+                />
+                <p className="font-medium text-lg mt-4 mb-2">채널 추가 QR 코드</p>
+                <p className="text-sm text-muted-foreground">매장에 비치하여 고객 유치</p>
               </div>
             </div>
           </motion.div>
