@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,8 +7,15 @@ export default function Footer() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-lg font-bold mb-4">
-              <span className="text-kakao font-bold">채널</span>메이트
+            <h3 className="text-lg font-bold mb-4 flex items-center gap-1">
+              <Image
+                src="/images/channel-logo.svg"
+                alt="채널"
+                width={24}
+                height={24}
+                className="inline-block"
+              />
+              메이트
             </h3>
             <p className="text-muted-foreground max-w-md">
               디지털 마케팅 사각지대 소상공인의 &apos;로컬 밀착형 CRM 파트너&apos;
@@ -46,11 +54,6 @@ export default function Footer() {
                 >
                   카톡으로 채팅요청
                 </a>
-              </li>
-              <li>
-                <span className="text-muted-foreground">
-                  이메일: 307077@naver.com
-                </span>
               </li>
             </ul>
           </div>

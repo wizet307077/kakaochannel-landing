@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,8 +16,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <span className="text-kakao font-bold">채널</span>메이트
+        <Link href="/" className="flex items-center gap-1 font-bold text-xl">
+          <Image
+            src="/images/channel-logo.svg"
+            alt="채널"
+            width={24}
+            height={24}
+            className="inline-block"
+          />
+          메이트
         </Link>
 
         {/* 데스크탑 메뉴 */}
