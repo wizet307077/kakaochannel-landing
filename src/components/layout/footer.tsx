@@ -10,7 +10,7 @@ export default function Footer() {
               <span className="text-kakao">채널</span>메이트
             </h3>
             <p className="text-muted-foreground max-w-md">
-              디지털 마케팅 사각지대 소상공인의 '로컬 밀착형 CRM 파트너'
+              디지털 마케팅 사각지대 소상공인의 &apos;로컬 밀착형 CRM 파트너&apos;
               카카오톡채널 무료 개설 및 운영 대행 서비스
             </p>
           </div>

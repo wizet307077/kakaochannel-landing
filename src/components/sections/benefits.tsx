@@ -196,7 +196,7 @@ export default function BenefitsSection() {
                   </div>
                   <div>
                     <p className="font-medium">비전화번호 기반</p>
-                    <p className="text-sm text-muted-foreground">'채널추가'만으로 단골 확보, 개인정보 저장 無</p>
+                    <p className="text-sm text-muted-foreground">&apos;채널추가&apos;만으로 단골 확보, 개인정보 저장 無</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">

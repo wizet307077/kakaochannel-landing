@@ -22,7 +22,7 @@ export default function HeroSection() {
               카카오톡채널 개설 및 운영 <span className="text-kakao">무료 대행!</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              전화번호 없이 '채널 추가' 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
+              전화번호 없이 &apos;채널 추가&apos; 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
             </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
               배달앱 수수료 없이 손님 주문을 직접 받아보세요!
