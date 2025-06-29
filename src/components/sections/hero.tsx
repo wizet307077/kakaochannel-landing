@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -51,10 +52,12 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-start justify-center">
                 <div className="max-w-[80%] aspect-[3/5] rounded-xl bg-white shadow-lg border border-gray-200 overflow-hidden flex flex-col">
                   {/* 카카오톡채널 인터페이스 이미지로 대체 */}
-                  <img 
+                  <Image 
                     src="/images/1.png" 
                     alt="카카오톡 채널 인터페이스" 
-                    className="w-full object-contain object-top"
+                    fill
+                    style={{ objectFit: 'contain', objectPosition: 'top' }}
+                    priority
                   />
                 </div>
               </div>

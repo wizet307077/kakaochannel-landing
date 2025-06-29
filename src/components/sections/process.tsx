@@ -113,10 +113,14 @@ export default function ProcessSection() {
           >
             <div className="rounded-xl overflow-hidden border border-border bg-white shadow-lg">
               <div className="p-4 text-center">
-                <img 
+                <Image 
                   src="/images/qr.png" 
                   alt="채널 추가 QR 코드" 
-                  className="mx-auto w-[300px] h-auto"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: 'auto', maxWidth: '300px' }}
+                  className="mx-auto"
+                  priority
                 />
                 <p className="font-medium text-lg mt-4 mb-2">채널 추가 QR 코드</p>
                 <p className="text-sm text-muted-foreground">매장에 비치하여 고객 유치</p>
