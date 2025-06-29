@@ -38,9 +38,14 @@ export default function Footer() {
             <h3 className="font-bold mb-4">문의</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  문의하기
-                </Link>
+                <a 
+                  href="http://pf.kakao.com/_xnSYrn/chat" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  카톡으로 채팅요청
+                </a>
               </li>
               <li>
                 <span className="text-muted-foreground">

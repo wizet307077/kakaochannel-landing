@@ -51,68 +51,8 @@ export default function CTASection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              
-              <p className="mt-4 text-sm text-muted-foreground">
-                첫 상담은 무료입니다. 언제든지 문의해주세요.
-              </p>
             </motion.div>
           </div>
-        </div>
-        
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-center"
-          >
-            <div className="bg-secondary/50 p-6 rounded-xl border border-border h-full">
-              <div className="bg-kakao/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">📱</span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">카톡으로 상담</h3>
-              <p className="text-muted-foreground">
-                실시간 채팅으로 궁금한 점을 편하게 문의하세요.
-              </p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-center"
-          >
-            <div className="bg-secondary/50 p-6 rounded-xl border border-border h-full">
-              <div className="bg-kakao/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">✅</span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">서비스 신청</h3>
-              <p className="text-muted-foreground">
-                간단한 정보 제공만으로 서비스가 시작됩니다.
-              </p>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center"
-          >
-            <div className="bg-secondary/50 p-6 rounded-xl border border-border h-full">
-              <div className="bg-kakao/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🚀</span>
-              </div>
-              <h3 className="text-xl font-bold mb-2">바로 시작</h3>
-              <p className="text-muted-foreground">
-                24시간 내에 채널이 개설되고 운영이 시작됩니다.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
     </div>

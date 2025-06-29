@@ -62,7 +62,7 @@ export default function ProcessSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            이용 <span className="text-kakao font-bold">프로세스</span>
+            이용 <span className="text-foreground font-bold">프로세스</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

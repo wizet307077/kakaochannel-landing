@@ -100,11 +100,11 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center md:justify-start gap-3 pl-4">
               <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-kakao-foreground">10,000</span>
+                <span className="text-lg font-bold text-kakao-foreground">10K</span>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">메시지 비용</p>
-                <p className="font-medium">무료 발송 지원</p>
+                <p className="font-medium">10,000건 무료 발송</p>
               </div>
             </div>
           </div>
