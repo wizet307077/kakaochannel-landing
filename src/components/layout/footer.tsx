@@ -50,8 +50,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} 채널메이트. All rights reserved.
+        <div className="border-t border-border mt-8 pt-8 text-sm text-muted-foreground">
+          <div className="mb-4">
+            <p>회사명 : 채널메이트   |   대표 : 함정애</p>
+            <p>사업자번호 : 799-04-03008</p>
+            <p>MAIL : chmate@kakao.com</p>
+          </div>
+          <div className="text-center">
+            © {new Date().getFullYear()} 채널메이트. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
