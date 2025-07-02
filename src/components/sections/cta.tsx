@@ -21,7 +21,9 @@ export default function CTASection() {
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              지금 바로 <span className="text-kakao-foreground bg-kakao px-2 py-1 rounded">카카오톡채널, 네이버스마트플레이스 운영대행</span> 서비스를 신청하세요
+              지금 바로<br />
+              <span className="text-kakao-foreground bg-kakao px-2 py-1 rounded">카카오톡채널, 네이버스마트플레이스 운영대행</span> 서비스를<br />
+              신청하세요
             </motion.h2>
             
             <motion.p

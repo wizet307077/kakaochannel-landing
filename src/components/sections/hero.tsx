@@ -41,7 +41,7 @@ export default function HeroSection() {
               소상공인 10분 선착순 모집 중!
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-              카카오톡채널, 네이버스마트플레이스 운영대행 <span className="text-kakao font-extrabold"> 3개월 무료!</span>
+              카카오톡채널, 네이버스마트플레이스 운영대행<br /> <span className="text-red-500 font-extrabold">3개월 무료!</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
               전화번호 없이 &apos;채널 추가&apos; 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
