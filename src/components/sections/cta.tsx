@@ -21,7 +21,7 @@ export default function CTASection() {
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              지금 바로 <span className="text-kakao-foreground bg-kakao px-2 py-1 rounded">카카오톡채널 운영대행</span> 서비스를 신청하세요
+              지금 바로 <span className="text-kakao-foreground bg-kakao px-2 py-1 rounded">카카오톡채널, 네이버스마트플레이스 운영대행</span> 서비스를 신청하세요
             </motion.h2>
             
             <motion.p
@@ -31,7 +31,7 @@ export default function CTASection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg mb-8"
             >
-              소상공인 10분 선착순! 3개월 무료로 카카오톡채널 운영을 체험해보세요.
+              소상공인 10분 선착순! 3개월 무료 서비스를 체험해보세요.
               전문가가 매장 홍보부터 고객 관리까지 모든 것을 도와드립니다.
             </motion.p>
             

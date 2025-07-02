@@ -4,8 +4,29 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    { src: "/images/1.png", alt: "카카오톡 채널 인터페이스" },
+    { src: "/images/1-1.jpeg", alt: "카카오톡 채널 서비스 예시" },
+    { src: "/images/1-2.jpeg", alt: "카카오톡 채널 활용 사례" }
+  ];
+
+  // 자동 이미지 전환 효과
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 4000); // 4초마다 이미지 전환
+    return () => clearInterval(interval);
+  }, []);
+
+  // 이미지 수동 전환 함수
+  const changeImage = (index: number) => {
+    setCurrentImage(index);
+  };
+
   return (
     <div className="relative overflow-hidden bg-background pt-16 md:pt-24">
       <div className="container relative z-10">
@@ -20,13 +41,13 @@ export default function HeroSection() {
               소상공인 10분 선착순 모집 중!
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-              카카오톡채널 개설 및 운영 <span className="text-kakao font-extrabold">무료 대행!</span>
+              카카오톡채널, 네이버스마트플레이스 운영대행 <span className="text-kakao font-extrabold"> 3개월 무료!</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
               전화번호 없이 &apos;채널 추가&apos; 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
             </p>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              배달앱 수수료 없이 손님 주문을 직접 받아보세요!
+            리뷰 폭발 → 검색 상위! 네이버 고객 유입, 우리가 터뜨립니다!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
@@ -48,19 +69,65 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
+            {/* 이미지 캐러셀 컨테이너 */}
             <div className="aspect-[4/3] relative rounded-xl overflow-hidden border border-border shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-start justify-center">
-                <div className="max-w-[80%] aspect-[3/5] rounded-xl bg-white shadow-lg border border-gray-200 overflow-hidden flex flex-col">
-                  {/* 카카오톡채널 인터페이스 이미지로 대체 */}
-                  <Image 
-                    src="/images/1.png" 
-                    alt="카카오톡 채널 인터페이스" 
-                    fill
-                    style={{ objectFit: 'contain', objectPosition: 'top' }}
-                    priority
-                  />
+              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-center justify-center">
+                {/* 이미지 슬라이더 */}
+                <div className="relative w-[80%] h-[80%] rounded-xl bg-white shadow-lg border border-gray-200">
+                  {images.map((image, index) => (
+                    <div 
+                      key={index}
+                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                        currentImage === index 
+                          ? "opacity-100 translate-x-0" 
+                          : index < currentImage 
+                            ? "opacity-0 -translate-x-full" 
+                            : "opacity-0 translate-x-full"
+                      }`}
+                    >
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={image.src} 
+                          alt={image.alt} 
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          priority={index === 0}
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+            </div>
+            
+            {/* 이미지 선택 도트 및 화살표 */}
+            <div className="flex justify-center items-center mt-4 gap-3">
+              <button
+                className="text-gray-600 hover:text-kakao"
+                onClick={() => changeImage((currentImage - 1 + images.length) % images.length)}
+                aria-label="이전 이미지"
+              >
+                ◀
+              </button>
+              
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentImage === index ? "bg-kakao scale-125" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  onClick={() => changeImage(index)}
+                  aria-label={`이미지 ${index + 1} 보기`}
+                />
+              ))}
+              
+              <button
+                className="text-gray-600 hover:text-kakao"
+                onClick={() => changeImage((currentImage + 1) % images.length)}
+                aria-label="다음 이미지"
+              >
+                ▶
+              </button>
             </div>
             
             {/* 출처 문구 */}

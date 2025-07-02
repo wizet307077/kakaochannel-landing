@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { PhoneOff, MessageSquare, BadgePercent, UserPlus } from "lucide-react";
+import { PhoneOff, MessageSquare, BadgePercent, UserPlus, Search } from "lucide-react";
 
 export default function ProblemSolutionSection() {
   const problems = [
@@ -31,8 +31,8 @@ export default function ProblemSolutionSection() {
   const solutions = [
     {
       icon: <MessageSquare className="h-10 w-10 text-kakao" />,
-      title: "카카오톡채널로 손쉬운 고객 확보",
-      description: "채널 추가만으로 고객과 연결되어 개인정보 수집 없이 직접 소통할 수 있습니다."
+      title: "카카오톡채널로 단골고객 확보",
+      description: "채널 추가만으로 단골고객과 연결되어 직접 소통할 수 있습니다."
     },
     {
       icon: <BadgePercent className="h-10 w-10 text-kakao" />,
@@ -43,6 +43,11 @@ export default function ProblemSolutionSection() {
       icon: <UserPlus className="h-10 w-10 text-kakao" />,
       title: "직접 주문 채널 확보",
       description: "배달앱 수수료 없이 카카오톡으로 직접 주문을 받아 수익을 높일 수 있습니다."
+    },
+    {
+      icon: <Search className="h-10 w-10 text-kakao" />,
+      title: "네이버 스마트플레이스 리뷰관리",
+      description: "신규고객유입, 네이버검색 노출최대화를 위한 전문적인 리뷰 관리를 제공합니다."
     }
   ];
 
@@ -113,7 +118,7 @@ export default function ProblemSolutionSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}

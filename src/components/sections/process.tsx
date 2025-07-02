@@ -35,12 +35,12 @@ export default function ProcessSection() {
 
   const ownerResponsibilities = [
     {
-      title: "채널 추가 QR 활용",
-      description: "매장 계산대와 영수증에 QR코드를 비치하여 고객의 채널 추가를 유도합니다."
+      title: "QR 코드 활용",
+      description: "QR코드를 활용하여 고객의 채널 추가, 리뷰를 유도합니다."
     },
     {
-      title: "쿠폰 활용 안내",
-      description: "고객에게 카카오톡채널 추가 시 받을 수 있는 혜택을 안내합니다."
+      title: "혜택 안내",
+      description: "고객에게 이벤트 응모시 받을 수 있는 혜택을 안내합니다."
     },
     {
       title: "소식 자료 제공",
@@ -114,7 +114,7 @@ export default function ProcessSection() {
             <div className="rounded-xl overflow-hidden border border-border bg-white shadow-lg">
               <div className="p-4 text-center">
                 <Image 
-                  src="/images/qr.png" 
+                  src="/images/7.png" 
                   alt="채널 추가 QR 코드" 
                   width={300}
                   height={300}
@@ -122,8 +122,7 @@ export default function ProcessSection() {
                   className="mx-auto"
                   priority
                 />
-                <p className="font-medium text-lg mt-4 mb-2">채널 추가 QR 코드</p>
-                <p className="text-sm text-muted-foreground">매장에 비치하여 고객 유치</p>
+                <p className="font-medium text-lg mt-4 mb-2">이벤트 응모 QR 코드 활용</p>
               </div>
             </div>
           </motion.div>
@@ -134,9 +133,9 @@ export default function ProcessSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold mb-6">사장님의 역할</h3>
+            <h3 className="text-2xl font-bold mb-6">점주님의 역할</h3>
             <p className="text-muted-foreground mb-8">
-              서비스 효과를 극대화하기 위해 사장님께서 도와주실 간단한 사항들입니다.
+              서비스 효과를 극대화하기 위해 점주님께서 도와주실 간단한 사항들입니다.
             </p>
             <div className="space-y-6">
               {ownerResponsibilities.map((item, index) => (

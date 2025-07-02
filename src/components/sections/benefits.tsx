@@ -60,14 +60,26 @@ export default function BenefitsSection() {
         "월간 성과 리포트 제공"
       ]
     },
+    {
+      id: "review",
+      title: "리뷰관리",
+      icon: "⭐",
+      displayImage: "/images/1-1.jpeg",
+      features: [
+        "리뷰 감사 쿠폰 발송",
+        "리뷰 모니터링",
+        "긍/부정 상황별 맞춤 멘트 즉시 등록",
+        "악성 리뷰 신고·조정 대행",
+        "월간 분석 리포트"
+      ]
+    },
   ];
 
   const additionalServices = [
-    "고객과의 1:1 채팅 관리",
     "카카오톡 예약 기능 설정",
     "카카오톡스토어 입점 대행",
-    "네이버 스마트플레이스 연동",
-    "영수증 리뷰 관리"
+    "네이버 예약",
+    "네이버 매장주문, 포장주문"
   ];
 
   return (
@@ -95,7 +107,7 @@ export default function BenefitsSection() {
         </div>
 
         <Tabs defaultValue="setup" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 h-auto mb-12">
+          <TabsList className="grid grid-cols-3 md:grid-cols-5 h-auto mb-12">
             {services.map((service) => (
               <TabsTrigger 
                 key={service.id} 
