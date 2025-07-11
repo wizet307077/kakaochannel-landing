@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   // 이제 단일 이미지만 사용
