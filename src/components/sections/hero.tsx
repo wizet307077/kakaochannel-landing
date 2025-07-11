@@ -64,7 +64,7 @@ export default function HeroSection() {
               />
             </div>
             
-          
+            {/* 출처 표시는 여기에서 제거됨 */}
             
             {/* 장식 요소들 */}
             <div className="absolute -right-4 -top-4 w-20 h-20 bg-kakao/30 rounded-full blur-xl"></div>
