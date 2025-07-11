@@ -114,7 +114,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-muted-foreground text-lg"
           >
-            카카오톡채널을 활용한 효과적인 고객 소통 및 관리 솔루션을 제공합니다.
+            카카오톡채널과 네이버스마트플레이스를 활용하여 효과적인 고객 관리 솔루션을 제공합니다.
           </motion.p>
         </div>
 

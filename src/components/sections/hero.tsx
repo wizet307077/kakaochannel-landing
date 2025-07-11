@@ -7,25 +7,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    { src: "/images/1.png", alt: "카카오톡 채널 인터페이스" },
-    { src: "/images/1-1.jpeg", alt: "카카오톡 채널 서비스 예시" },
-    { src: "/images/1-2.jpeg", alt: "카카오톡 채널 활용 사례" }
-  ];
-
-  // 자동 이미지 전환 효과
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000); // 4초마다 이미지 전환
-    return () => clearInterval(interval);
-  }, []);
-
-  // 이미지 수동 전환 함수
-  const changeImage = (index: number) => {
-    setCurrentImage(index);
-  };
+  // 이제 단일 이미지만 사용
+  const image = { src: "/images/1-3.jpg", alt: "카카오톡 채널 서비스" };
 
   return (
     <div className="relative overflow-hidden bg-background pt-16 md:pt-24">
@@ -44,10 +27,10 @@ export default function HeroSection() {
               카카오톡채널, 네이버스마트플레이스 운영대행<br /> <span className="text-red-500 font-extrabold">3개월 무료!</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              전화번호 없이 &apos;채널 추가&apos; 한 번이면 OK—단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
+              단골 확보·매장 소식·쿠폰 발송까지 자동으로 관리해드립니다!
             </p>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-            리뷰 폭발 → 검색 상위! 네이버 고객 유입, 우리가 터뜨립니다!
+            <p className="text-lg md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
+            리뷰가 고객을 부르고, 고객이 리뷰를 남기는 마법 같은 선순환이 시작됩니다!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
@@ -69,71 +52,19 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            {/* 이미지 캐러셀 컨테이너 */}
-            <div className="aspect-[4/3] relative rounded-xl overflow-hidden border border-border shadow-xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-yellow-100 via-yellow-50 to-white flex items-center justify-center">
-                {/* 이미지 슬라이더 */}
-                <div className="relative w-[80%] h-[80%] rounded-xl bg-white shadow-lg border border-gray-200">
-                  {images.map((image, index) => (
-                    <div 
-                      key={index}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        currentImage === index 
-                          ? "opacity-100 translate-x-0" 
-                          : index < currentImage 
-                            ? "opacity-0 -translate-x-full" 
-                            : "opacity-0 translate-x-full"
-                      }`}
-                    >
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src={image.src} 
-                          alt={image.alt} 
-                          fill
-                          style={{ objectFit: 'cover' }}
-                          priority={index === 0}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* 단일 이미지를 컨테이너 없이 표시, 상단이 잘리지 않도록 objectFit 수정 */}
+            <div className="relative w-full aspect-[4/3]">
+              <Image 
+                src={image.src} 
+                alt={image.alt} 
+                fill
+                style={{ objectFit: 'contain', objectPosition: 'top' }}
+                className="rounded-lg"
+                priority
+              />
             </div>
             
-            {/* 이미지 선택 도트 및 화살표 */}
-            <div className="flex justify-center items-center mt-4 gap-3">
-              <button
-                className="text-gray-600 hover:text-kakao"
-                onClick={() => changeImage((currentImage - 1 + images.length) % images.length)}
-                aria-label="이전 이미지"
-              >
-                ◀
-              </button>
-              
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    currentImage === index ? "bg-kakao scale-125" : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                  onClick={() => changeImage(index)}
-                  aria-label={`이미지 ${index + 1} 보기`}
-                />
-              ))}
-              
-              <button
-                className="text-gray-600 hover:text-kakao"
-                onClick={() => changeImage((currentImage + 1) % images.length)}
-                aria-label="다음 이미지"
-              >
-                ▶
-              </button>
-            </div>
-            
-            {/* 출처 문구 */}
-            <div className="text-center mt-2">
-              <p className="text-sm text-gray-700">- 이미지출처 : 카카오단골만들기지원센터</p>
-            </div>
+          
             
             {/* 장식 요소들 */}
             <div className="absolute -right-4 -top-4 w-20 h-20 bg-kakao/30 rounded-full blur-xl"></div>
@@ -142,35 +73,22 @@ export default function HeroSection() {
         </div>
         
         {/* 트러스트 배지 */}
-        <div className="mt-16 mb-8 border-y border-border py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            <div className="flex items-center md:justify-start gap-3 pl-4">
-              <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-kakao-foreground">3+</span>
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">경력</p>
-                <p className="font-medium">3년 이상 마케팅 경험</p>
-              </div>
-            </div>
-            <div className="flex items-center md:justify-start gap-3 pl-4">
-              <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-kakao-foreground">0</span>
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">초기 비용</p>
-                <p className="font-medium">3개월 무료 이용</p>
-              </div>
-            </div>
-            <div className="flex items-center md:justify-start gap-3 pl-4">
-              <div className="w-12 h-12 rounded-full bg-kakao/20 flex items-center justify-center">
-                <span className="text-lg font-bold text-kakao-foreground">10K</span>
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">메시지 비용</p>
-                <p className="font-medium">10,000건 무료 발송</p>
-              </div>
-            </div>
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <h4 className="text-2xl md:text-3xl font-bold text-foreground">10,000+</h4>
+            <p className="text-muted-foreground">등록 매장</p>
+          </div>
+          <div>
+            <h4 className="text-2xl md:text-3xl font-bold text-foreground">92%</h4>
+            <p className="text-muted-foreground">계약 연장률</p>
+          </div>
+          <div>
+            <h4 className="text-2xl md:text-3xl font-bold text-foreground">67%</h4>
+            <p className="text-muted-foreground">리뷰 증가율</p>
+          </div>
+          <div>
+            <h4 className="text-2xl md:text-3xl font-bold text-foreground">45%</h4>
+            <p className="text-muted-foreground">방문 증가율</p>
           </div>
         </div>
       </div>

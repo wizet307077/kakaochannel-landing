@@ -64,7 +64,7 @@ export default function BenefitsSection() {
       id: "review",
       title: "리뷰관리",
       icon: "⭐",
-      displayImage: "/images/1-1.jpeg",
+      displayImage: "/images/review.jpeg",
       features: [
         "리뷰 감사 쿠폰 발송",
         "리뷰 모니터링",
@@ -76,10 +76,11 @@ export default function BenefitsSection() {
   ];
 
   const additionalServices = [
-    "카카오톡 예약 기능 설정",
-    "카카오톡스토어 입점 대행",
-    "네이버 예약",
-    "네이버 매장주문, 포장주문"
+    "카카오톡 예약하기",
+    "카카오톡스토어 입점대행",
+    "카카오톡 주문하기by요기요",
+    "네이버 예약, 주문",
+    "네이버 소식, 쿠폰"
   ];
 
   return (
@@ -242,8 +243,8 @@ export default function BenefitsSection() {
                     <Check className="h-4 w-4 text-kakao-foreground" />
                   </div>
                   <div>
-                    <p className="font-medium">카카오 생태계 연동</p>
-                    <p className="text-sm text-muted-foreground">카카오맵·Daum 리뷰·카카오내비 노출 관리</p>
+                    <p className="font-medium">카카오,네이버 생태계 연동</p>
+                    <p className="text-sm text-muted-foreground">카카오맵,네이버지도 노출관리</p>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
@@ -261,7 +262,7 @@ export default function BenefitsSection() {
                   </div>
                   <div>
                     <p className="font-medium">메시지발송 무료</p>
-                    <p className="text-sm text-muted-foreground">10,000여건 무료</p>
+                    <p className="text-sm text-muted-foreground">20,000여건 무료</p>
                   </div>
                 </li>
               </ul>
