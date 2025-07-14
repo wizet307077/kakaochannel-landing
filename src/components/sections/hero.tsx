@@ -65,9 +65,7 @@ export default function HeroSection() {
             
             {/* 출처 표시는 여기에서 제거됨 */}
             
-            {/* 장식 요소들 */}
-            <div className="absolute -right-4 -top-4 w-20 h-20 bg-kakao/30 rounded-full blur-xl"></div>
-            <div className="absolute -left-4 -bottom-4 w-40 h-40 bg-blue-500/20 rounded-full blur-xl"></div>
+            {/* 장식 요소들 - 제거됨 */}
           </motion.div>
         </div>
         
