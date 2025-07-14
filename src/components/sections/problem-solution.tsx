@@ -23,8 +23,8 @@ export default function ProblemSolutionSection() {
     },
     {
       icon: <BadgePercent className="h-10 w-10 text-red-500" />,
-      title: "배달앱 높은 중개 수수료",
-      description: "배달앱 수수료로 인해 이익이 감소하고, 직접적인 고객 접점이 없어집니다."
+      title: "배달앱의 높은 중개 수수료",
+      description: "중개수수료에 허공으로 사라지는 이익, 더 이상 안 됩니다!"
     }
   ];
 
@@ -41,8 +41,8 @@ export default function ProblemSolutionSection() {
     },
     {
       icon: <UserPlus className="h-10 w-10 text-kakao" />,
-      title: "직접 주문 채널 확보",
-      description: "배달앱 수수료 없이 카카오톡으로 직접 주문을 받아 수익을 높일 수 있습니다."
+      title: "단골관리 시스템으로 ‘수수료 0’",
+      description: "직접 전화주문 받으세요! 민생회복지원금, 지역화폐도 결제 OK!"
     },
     {
       icon: <Search className="h-10 w-10 text-kakao" />,

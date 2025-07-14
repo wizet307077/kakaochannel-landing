@@ -94,7 +94,7 @@ export default function BenefitsSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            채널메이트 <span className="text-blue-500 font-bold">무료 서비스</span> 혜택
+            채널메이트 <span className="text-blue-500 font-bold">기본 서비스</span> 
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -191,7 +191,7 @@ export default function BenefitsSection() {
           >
             <h3 className="text-2xl font-bold mb-6">확장 및 추가 서비스</h3>
             <p className="text-muted-foreground mb-8">
-              카카오톡채널 기본 서비스와 함께 비즈니스에 필요한 추가 서비스도 지원해드립니다.
+              채널메이트 기본 서비스와 함께 비즈니스에 필요한 추가 서비스도 지원해드립니다.
             </p>
             <div className="space-y-4">
               {additionalServices.map((service, index) => (

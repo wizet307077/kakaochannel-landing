@@ -21,8 +21,8 @@ export default function ProcessSection() {
     },
     {
       icon: <Settings className="h-8 w-8 text-kakao" />,
-      title: "채널 셋업 및 운영",
-      description: "채널메이트가 카카오톡채널 개설 및 운영을 대신해 드립니다.",
+      title: "셋업 및 운영",
+      description: "채널메이트가 카카오톡채널, 네이버스마트플레이스 운영을 대신해 드립니다.",
       delay: 0.4
     },
     {
