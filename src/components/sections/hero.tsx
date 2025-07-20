@@ -2,50 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { kakaoBlurDataURL, imagesPaths, imagesSizes } from "@/lib/image-utils";
 
 export default function HeroSection() {
-  // 기존 단일 이미지 복원
-  const mainImage = { src: "/images/img_first.jpg", alt: "카카오톡 채널 서비스" };
-  
-  // 7개의 슬라이드 이미지 배열
-  const slideImages = [
-    { src: "/images/001.jpg", alt: "카카오톡 채널 서비스 1" },
-    { src: "/images/002.jpg", alt: "카카오톡 채널 서비스 2" },
-    { src: "/images/003.jpg", alt: "카카오톡 채널 서비스 3" },
-    { src: "/images/004.jpg", alt: "카카오톡 채널 서비스 4" },
-    { src: "/images/005.jpg", alt: "카카오톡 채널 서비스 5" },
-    { src: "/images/006.jpg", alt: "카카오톡 채널 서비스 6" },
-    { src: "/images/007.jpg", alt: "카카오톡 채널 서비스 7" },
-  ];
-
-  // 현재 표시 중인 이미지 인덱스
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // 자동 슬라이드 기능
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slideImages.length);
-    }, 3000); // 3초마다 이미지 변경
-
-    return () => clearInterval(interval);
-  }, [slideImages.length]);
-
-  // 이전 이미지로 이동
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? slideImages.length - 1 : prevIndex - 1
-    );
-  };
-
-  // 다음 이미지로 이동
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      (prevIndex + 1) % slideImages.length
-    );
-  };
+  // 단일 이미지
+  const mainImage = { src: imagesPaths.mainImage, alt: "카카오톡 채널 서비스" };
 
   return (
     <div className="relative overflow-hidden bg-background pt-16 md:pt-24">
@@ -87,9 +50,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative flex flex-col gap-6"
+            className="relative"
           >
-            {/* 기존 단일 이미지 복원 */}
+            {/* 단일 이미지만 표시 - 최적화 적용 */}
             <div className="relative w-full aspect-[4/3]">
               <Image 
                 src={mainImage.src} 
@@ -98,61 +61,11 @@ export default function HeroSection() {
                 style={{ objectFit: 'contain', objectPosition: 'top' }}
                 className="rounded-lg"
                 priority
+                sizes={imagesSizes.heroSizes}
+                placeholder="blur"
+                blurDataURL={kakaoBlurDataURL}
+                quality={85}
               />
-            </div>
-            
-            {/* 슬라이드 컨테이너 - 기존 이미지 아래에 추가 */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
-              {/* 이미지 슬라이더 */}
-              <div className="relative w-full h-full">
-                {slideImages.map((image, index) => (
-                  <div 
-                    key={index}
-                    className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                      index === currentIndex ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <Image 
-                      src={image.src} 
-                      alt={image.alt} 
-                      fill
-                      style={{ objectFit: 'contain', objectPosition: 'top' }}
-                      priority={index === currentIndex}
-                      className="rounded-lg"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* 슬라이드 네비게이션 화살표 */}
-              <button 
-                onClick={prevSlide}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm z-10"
-                aria-label="이전 이미지"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-              <button 
-                onClick={nextSlide}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm z-10"
-                aria-label="다음 이미지"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button>
-
-              {/* 슬라이드 인디케이터 (점) */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {slideImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-3 h-3 rounded-full ${
-                      index === currentIndex ? "bg-kakao" : "bg-white/50"
-                    }`}
-                    aria-label={`이미지 ${index + 1}로 이동`}
-                  />
-                ))}
-              </div>
             </div>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@ import ProblemSolutionSection from "@/components/sections/problem-solution";
 import BenefitsSection from "@/components/sections/benefits";
 import ProcessSection from "@/components/sections/process";
 import CTASection from "@/components/sections/cta";
+import ImageShowcaseSection from "@/components/sections/image-showcase";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ProblemSolutionSection />
       <BenefitsSection />
       <ProcessSection />
+      <ImageShowcaseSection />
       <CTASection />
     </>
   );
